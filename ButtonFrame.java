@@ -2,6 +2,8 @@ import javax.swing.*;
 import javax.swing.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.*;
+import java.awt.*;
 import java.awt.event.*;
 
 class ButtonListener implements ActionListener
@@ -27,8 +29,8 @@ public class ButtonFrame extends JFrame
 {
 	public ButtonFrame()
 	{
-		JButton close = new JButton("Close NOT ");
-		JButton open = new JButton("Open NOT");
+		JButton open = new JButton("NOT Open");
+		JButton close = new JButton("NOT Close");
 		ActionListener listener = new ButtonListener();
 
 		open.addActionListener(listener);
