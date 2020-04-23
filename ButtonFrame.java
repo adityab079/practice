@@ -18,7 +18,7 @@ class ButtonCloser extends WindowAdapter
 {
     public void windowClosing(WindowEvent we)
     {
-	System.out.println("Application exiting");
+	System.out.println("NOT Application exiting");
 	System.exit(0);
     }
 }
@@ -27,8 +27,8 @@ public class ButtonFrame extends JFrame
 {
 	public ButtonFrame()
 	{
-		JButton open = new JButton("Open");
-		JButton close = new JButton("Close");
+		JButton close = new JButton("Close NOT ");
+		JButton open = new JButton("Open NOT");
 		ActionListener listener = new ButtonListener();
 
 		open.addActionListener(listener);
