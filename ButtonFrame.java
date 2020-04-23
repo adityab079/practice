@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 class ButtonListener implements ActionListener {
-    int count = 0;
+    int count = 1000;
 
     public void actionPerformed(ActionEvent e) {
         System.out.println("Button pressed (" + count++ + ") " +
