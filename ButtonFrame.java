@@ -6,48 +6,42 @@ import java.awt.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class ButtonListener implements ActionListener
-{
-	int count = 0;
-	public void actionPerformed(ActionEvent e)
-	{
-	    System.out.println("Button pressed (" + count++ + ") " + 
-			       e.getActionCommand());
-	}
-}
+class ButtonListener implements ActionListener {
+    int count = 0;
 
-class ButtonCloser extends WindowAdapter
-{
-    public void windowClosing(WindowEvent we)
-    {
-	System.out.println("NOT Application exiting");
-	System.exit(0);
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Button pressed (" + count++ + ") " +
+                e.getActionCommand());
     }
 }
 
-public class ButtonFrame extends JFrame
-{
-	public ButtonFrame()
-	{
-		JButton open = new JButton("NOT Open");
-		JButton close = new JButton("NOT Close");
-		ActionListener listener = new ButtonListener();
+class ButtonCloser extends WindowAdapter {
+    public void windowClosing(WindowEvent we) {
+        System.out.println("NOT Application exiting");
+        System.exit(0);
+    }
+}
 
-		open.addActionListener(listener);
-		close.addActionListener(listener);
+public class ButtonFrame extends JFrame {
+    public ButtonFrame() {
+        JButton open = new JButton("NOT Open");
+        JButton close = new JButton("NOT Close");
+        ActionListener listener = new ButtonListener();
 
-		Container pane = getContentPane();
-		pane.setLayout(new FlowLayout());
-		pane.add(open);
-		pane.add(close);
+        open.addActionListener(listener);
+        close.addActionListener(listener);
 
-		addWindowListener(new ButtonCloser());
-		setSize(200, 100);
-		setVisible(true);
-	}
+        Container pane = getContentPane();
+        pane.setLayout(new FlowLayout());
+        pane.add(open);
+        pane.add(close);
 
-	public static void main(String args[])
-	{
-		JFrame f = new ButtonFrame();
-	}
+        addWindowListener(new ButtonCloser());
+        setSize(200, 100);
+        setVisible(true);
+    }
+
+    public static void main(String args[]) {
+        JFrame f = new ButtonFrame();
+    }
 }
